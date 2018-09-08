@@ -23,8 +23,6 @@ class Case<T> extends Tuple<Supplier<Boolean>, Supplier<Result<T>>> {
 
     @SafeVarargs
     static <T> Result<T> match(final DefaultCase<T> defaultCase, final Case<T>... matchers) {
-
-
         for (Case<T> aCase : matchers) {
             if (aCase.getFirst().get()) {
                 return aCase.getSecond().get();
